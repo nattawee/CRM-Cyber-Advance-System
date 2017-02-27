@@ -1,0 +1,33 @@
+<section>
+  <div class="page-header">
+    <h1>Contacts</h1>
+    <button class="btn btn-primary" ui-sref="contacts.create()">สร้างรายการใหม่</button>
+  </div>
+  <div class="list-group">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Mobile Phone</th>
+          <th>Business Phone</th>
+          <th>E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="contact in vm.contacts | filter:searchText" ui-sref="{{contact.uriref}}">
+          <td>{{contact.customer}}</td>
+          <td>{{contact.lastname}}</td>
+          <td>{{contact.Firstname}}</td>
+          <td>{{contact.mobilephone}}</td>
+          <td>{{contact.businessphone}}</td>
+          <td>{{contact.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.contacts.$resolved && !vm.contacts.length">
+    No Contacts yet, why don't you <a ui-sref="contacts.create">create one</a>?
+  </div>
+</section>

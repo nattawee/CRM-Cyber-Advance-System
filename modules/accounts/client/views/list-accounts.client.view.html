@@ -1,0 +1,31 @@
+<section>
+  <div class="page-header">
+    <h1>Accounts</h1>
+    <button class="btn btn-primary" ui-sref="accounts.create()">สร้างรายการใหม่</button>
+  </div>
+  <div class="list-group">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Account Name</th>
+          <th>E-mail</th>
+          <th>Mine Phone</th>
+          <th>Currency</th>
+          <th>Price List</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="account in vm.accounts | filter:searchText" ui-sref="{{account.uriref}}">
+          <td>{{account.name}}</td>
+          <td>{{account.email}}</td>
+          <td>{{account.minephone}}</td>
+          <td>{{account.currency}}</td>
+          <td>{{account.pricelist}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.accounts.$resolved && !vm.accounts.length">
+    No Accounts yet, why don't you <a ui-sref="accounts.create">create one</a>?
+  </div>
+</section>

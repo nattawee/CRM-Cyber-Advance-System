@@ -1,16 +1,9 @@
 'use strict';
 
-angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator', 'BranchesService', 'DepartmentsService',
-  function ($scope, $state, $http, $location, $window, Authentication, PasswordValidator, BranchesService, DepartmentsService) {
+angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator',
+  function ($scope, $state, $http, $location, $window, Authentication, PasswordValidator) {
     $scope.authentication = Authentication;
-    BranchesService.query(function (resp) {
-      $scope.branchesService = resp;
-    });
-    DepartmentsService.query(function(resp){
-      $scope.departmentsService = resp;
-    });
     $scope.popoverMsg = PasswordValidator.getPopoverMsg();
-
     // Get an eventual error defined in the URL query string:
     $scope.error = $location.search().err;
 
