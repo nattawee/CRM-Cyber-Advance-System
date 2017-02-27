@@ -1,0 +1,52 @@
+<section>
+  <div class="page-header">
+    <h1>ฝ่าย</h1>
+
+  </div>
+
+  <div class="table-responsive">
+    <div class="row">
+      <div class="col col-xs-10">
+        <input type="search" class="form-control " ng-model="searchText" placeholder="ค้นหา">
+      </div>
+      <div class="col col-md-2">
+        <button class="btn btn-primary" ui-sref="departments.create">สร้างรายการใหม่</button>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="tabs-container">
+
+    <uib-tabset>
+
+      <uib-tab>
+        <uib-tab-heading>
+          ฝ่าย
+        </uib-tab-heading>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>ชื่อฝ่าย</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="department in vm.departments | filter:searchText" ui-sref="departments.edit({ departmentId: department._id })">
+                <td>
+                  {{department.name}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </uib-tab>
+
+    </uib-tabset>
+
+  </div>
+
+  <div class="alert alert-warning text-center" ng-if="vm.departments.$resolved && !vm.departments.length">
+    No Departments yet, why don't you <a ui-sref="departments.create">create one</a>?
+  </div>
+</section>

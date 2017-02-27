@@ -1,0 +1,39 @@
+<section>
+  <!--<div class="page-header">
+    <h1 ng-bind="vm.aquisition.name"></h1>
+  </div>
+  <div class="pull-right" ng-show="vm.aquisition.isCurrentUserOwner">
+    <a class="btn btn-primary" ui-sref="aquisitions.edit({ aquisitionId: vm.aquisition._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>-->
+  <div ng-include="'/modules/aquisitions/client/views/form-aquisition.client.view.html'"></div>
+  <!--<small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.aquisition.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.aquisition.user"
+            ng-bind="vm.aquisition.user.displayName"></span>
+      <span ng-if="!vm.aquisition.user">Deleted User</span>
+    </em>
+  </small>-->
+  <!--<p class="lead">sdf</p>-->
+  <!--<div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-4 col-ms-4 col-md-4 border-all"><p>หลักเกณฑ์</p></div>
+        <div class="col-xs-4 col-ms-4 col-md-4 border-all"><p>สูตรการคำนวณ</p></div>
+        <div class="col-xs-4 col-ms-4 col-md-4 border-all"><p>ขนาดรายการ</p></div>
+      </div>
+      <div class="row border-left-right-bottom">
+        <div class="col-xs-4 col-ms-4 col-md-4"><p>1. เกณฑ์มูลค่าสินทรัพย์ที่มีตัวตนสุทธิ (NTA)</p></div>
+        <div class="col-xs-4 col-ms-4 col-md-4"><p>สัดส่วนที่ได้มา({{vm.aquisition.form1.acqodis}}) x มูลค่าสินทรัพย์สุทธิ()</p></div>
+        <div class="col-xs-4 col-ms-4 col-md-4"><p>ขนาดรายการ</p></div>
+      </div>
+    </div>
+  </div>-->
+</section>

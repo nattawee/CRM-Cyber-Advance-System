@@ -1,0 +1,31 @@
+<div class="tabs-container">
+    <uib-tabset>
+        <uib-tab ng-repeat="tab in tabs">
+            <uib-tab-heading>
+                {{tab.name}}
+            </uib-tab-heading>
+            <div class="panel-body">
+                <!--{{( tab.status === 'draft' ||  tab.status === 'rejected' ? 'ui-sref="generals.edit({ generalId: general._id })"': 'ui-sref="generals.view({ generalId: general._id })"')}}      -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>Email</th>
+                            <th>ประเภท</th>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--{{users[0].roles}}-->
+                        <tr ng-repeat="user in users | filter:{ roles : tab.status } | filter:search" ui-sref="admin.user-edit({ userId: user._id })">
+                            <td>
+                                {{user.username}}
+                            </td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.roles[0]}}</td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

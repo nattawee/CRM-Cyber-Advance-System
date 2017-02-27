@@ -1,0 +1,329 @@
+<div class="ibox float-e-margins border-left border-right border-bottom">
+    <div class="ibox-title">
+        <h5>ตารางแสดงวงเงินงบประมาณที่ได้รับจัดสรรและรายละเอียดค่าใช้จ่ายในการจ้างงานวิจัยหรือสนับสนุนให้ทุนการวิจัย</h5>
+        <div ibox-tools></div>
+    </div>
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group " show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">1. ชื่อโครงการ</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form5.field1.field11" name="field11" class="form-control" placeholder="ชื่อโครงการ" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">1. ชื่อโครงการ</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field1.field11}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label text-right">/หน่วยงานเจ้าของโครงการ</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form5.field1.field12" name="field12" class="form-control" placeholder="หน่วยงานเจ้าของโครงการ" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label text-right">/หน่วยงานเจ้าของโครงการ</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field1.field12}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">2. วงเงินงบประมาณที่ได้รับจัดสรรในการจ้างหรือเงินสนับสนุนให้ทุนการวิจัย</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field2" name="field2" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">2. วงเงินงบประมาณที่ได้รับจัดสรรในการจ้างหรือเงินสนับสนุนให้ทุนการวิจัย</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field2 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">3. วันที่กำหนดราคากลาง</label>
+                    <div class="col-sm-9">
+                        <input type="date" ng-model="vm.general.form5.field3.field31" name="field31" class="form-control" placeholder="วันที่กำหนดราคากลาง" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">3. วันที่กำหนดราคากลาง</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field3.field31 | date:'dd/MM/yyyy'}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">เป็นเงิน</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field3.field32" name="field32" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">เป็นเงิน</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field3.field32 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">4. หมวดค่าตอบแทน</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field4.field41" name="field41" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">4. หมวดค่าตอบแทน</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field4.field41 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">4.1 ประเภทนักวิจัย</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form5.field4.field42" name="field42" class="form-control" placeholder="คน" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">4.1 ประเภทนักวิจัย</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field4.field42}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">4.2 คุณสมบัตินักวิจัย</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form5.field4.field43" name="field43" class="form-control" placeholder="คน" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">4.2 คุณสมบัตินักวิจัย</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field4.field43}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">4.3 จำนวนนักวิจัย</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field4.field44" name="field44" class="form-control" placeholder="คน" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">4.3 จำนวนนักวิจัย</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field4.field44 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">5. หมวดค่าจ้าง</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field5" name="field5" class="form-control" placeholder="บาท" >
+                    </div>                   
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">5. หมวดค่าจ้าง</label>
+                     <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field5 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">6. หมวดค่าใช้สอย</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field6" name="field6" class="form-control" placeholder="บาท" >
+                    </div>                   
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">6. หมวดค่าใช้สอย</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field6 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">7. ค่าวัสดุ</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field7" name="field7" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">7. ค่าวัสดุ</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field7 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">8. ค่าครุภัณฑ์</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field8" name="field8" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">8. ค่าครุภัณฑ์</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field8 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-1 control-label"></label>
+                    <label class="col-sm-7 control-label">9. ค่าใช้จ่ายในการศึกษาดูงานหรือค้นคว้าข้อมูลในต่างประเทศ (ถ้ามี)</label>                    
+                    <div class="col-sm-4">
+                    </div>                    
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">9.1. จำนวน</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field9.field91" name="field91" class="form-control" placeholder="คน" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">9.1. จำนวน</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field9.field91 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">9.2 </label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field9.field92" name="field92" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">9.2 </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field9.field92 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">10. ค่าใช้จ่ายอื่นๆ </label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field10" name="field10" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">10. ค่าใช้จ่ายอื่นๆ </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field10 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">11. รายชื่อเจ้าหน้าที่ของรัฐ (ผู้รับผิดชอบ) ที่เกี่ยวข้องกับการจ้างงานวิจัยหรือสนับสนุนทุนวิจัยและ TOR</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form5.field11" name="field11" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">11. รายชื่อเจ้าหน้าที่ของรัฐ (ผู้รับผิดชอบ) ที่เกี่ยวข้องกับการจ้างงานวิจัยหรือสนับสนุนทุนวิจัยและ TOR</label>
+                   <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field11}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">12. ที่มาของการกำหนดราคากลาง (ราคาอ้างอิง) </label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form5.field12" name="field12" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">12. ที่มาของการกำหนดราคากลาง (ราคาอ้างอิง) </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form5.field12 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+    </div>
+</div>

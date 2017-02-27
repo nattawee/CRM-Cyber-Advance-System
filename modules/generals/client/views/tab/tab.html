@@ -1,0 +1,48 @@
+<div class="tabs-container" >
+    <uib-tabset>
+        <uib-tab ng-repeat="tab in vm.tabs">
+            <uib-tab-heading>
+                <div ng-click="vm.status(tab);">{{tab.name}}</div>
+            </uib-tab-heading>
+            <div class="panel-body">   
+                  
+                <!--{{( tab.status === 'draft' ||  tab.status === 'rejected' ? 'ui-sref="generals.edit({ generalId: general._id })"': 'ui-sref="generals.view({ generalId: general._id })"')}}      -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>วันที่</th>
+                            <th>รายการจัดซื้อ/จัดจ้าง</th>
+                            <th>สำนักงาน</th>
+                            <th>
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">ประมาณการค่าจัดซื้อ/จัดจ้าง (ราคากลาง)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xs-4 text-center">จำนวนเงิน</div>
+                                    <div class="col col-xs-4 text-center">วันที่</div>
+                                    <div class="col col-xs-4 text-center">ผู้อนุมัติ</div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="general in vm.generals | filter:{ status: tab.status } | filter:searchText" ui-sref="{{tab.uriref}}" ng-if="general.department._id === vm.authentication.user.branch"> <!--ng-if="general.department._id === vm.authentication.user.branch"-->
+                            <td>
+                                {{general.trnsdate | date:'dd/MM/yyyy'}} 
+                            </td>
+                            <td>{{general.itemdesc}}</td>
+                            <td>{{general.department.name}}</td>
+                            <td>
+                                <div class="row">
+                                    <div class="col col-md-4 text-right">{{general.estexpense.amount | number:2}}</div>
+                                    <div class="col col-md-4 text-center">{{general.estexpense.apprvdate | date:'dd/MM/yyyy'}}</div>
+                                    <div class="col col-md-4">{{general.estexpense.approver}}</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

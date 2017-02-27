@@ -1,0 +1,89 @@
+<nav class="navbar-default navbar-static-side" role="navigation" data-ng-controller="HeaderController">
+  <div class="sidebar-collapse">
+    <ul side-navigation class="nav metismenu" id="side-menu" ng-if="authentication.user.roles[0] !== 'guest'">
+      <li class="nav-header">
+        <div class="profile-element">
+          <!-- Picture of user -->
+          <!--<img alt="image" class="img-circle" src="img/profile_small.jpg"/>-->
+          <a href>
+            <span class="clear">
+                <span class="block m-t-xs">
+                    <strong class="font-bold">User</strong>
+             </span>
+            <span class="text-muted text-xs block">Example</span>
+            </span>
+          </a>
+        </div>
+        <div class="logo-element">
+          IN+
+        </div>
+      </li>
+      <!--<li ng-class="{active: $uiRoute}" ui-route="/" >
+        <a href="/#!/"><i class="fa fa-laptop"></i> <span class="nav-label">Index</span></a>
+      </li>
+      <li ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" dropdown="item.type === 'dropdown'">
+        <a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+        <ul ng-switch-when="dropdown" class="dropdown-menu nav nav-second-level">
+          <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(authentication.user);" ui-sref-active="active">
+            <a ui-sref="{{subitem.state}}" ng-bind="subitem.title"></a>
+          </li>
+        </ul>
+        <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+      </li>-->
+      <!--<li ng-class="{active: $uiRoute}" ui-route="/" class="dropdown">
+        <a href="/#/"><i class="fa fa-home"></i> <span class="nav-label">Index</span></a>
+      </li>-->
+      <!--<li ng-repeat="item in menu.items | orderBy: 'position'" ng-class="{ active: $state.includes(item.state)}" class="{{item.class}}"
+        ng-if="item.shouldRender(authentication.user);">
+        <a href="/#/{{item.state}}"><i class="{{item.title === 'Purchases' ? 'fa fa-file-powerpoint-o' : item.title === 'Products' ? 'fa fa-dropbox': item.title === 'Companies' ? 'fa fa-building-o': item.title === 'Gls' ? 'fa fa-line-chart': item.title === 'Invoices' ? 'fa fa-file': item.title === 'Receipts' ? 'fa fa-file-text': item.title === 'Receivings' ? 'fa fa-newspaper-o':item.title === 'Payments' ? 'fa fa-btc': item.title === 'Quotations' ? 'fa fa-stack-overflow': 'fa fa-laptop'}}"></i> <span class="nav-label">{{::item.title}}&nbsp;</span></a>
+      </li>-->
+      <li ng-class="{active: $uiRoute}" ui-route="/admin" class="{{admin.class}}" ng-if="authentication.user.roles[0] === 'admin'">
+        <a href="/#/admin"><i class="fa fa-building-o"></i> <span class="nav-label">admin</span></a>
+      </li>
+      <li ng-class="{active: $uiRoute}" ui-route="/generals" class="{{purchases.class}}" ng-if="authentication.user">
+        <a href="/#/generals"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">บริหารทั่วไป</span></a>
+      </li>
+      <li ng-class="{active: $uiRoute}" ui-route="/renovates" class="{{purchases.class}}" ng-if="authentication.user">
+        <a href="/#/renovates"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">ปรับปรุงทรัพย์ </span></a>
+      </li>
+      <li ng-class="{active: $uiRoute}" ui-route="/properties" class="{{purchases.class}}" ng-if="authentication.user">
+        <a href="/#/properties"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">ดูแลรักษาทรัพย์สินรอการขาย </span></a>
+      </li>
+
+      <li ng-class="{active: $uiRoute}" ui-route="/branches" class="{{purchases.class}}" ng-if="authentication.user.roles[0] === 'admin'">
+        <a href="/#/branches"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">สำนักงาน</span></a>
+      </li>
+
+      <li ng-class="{active: $uiRoute}" ui-route="/departments" class="{{purchases.class}}" ng-if="authentication.user.roles[0] === 'admin'">
+        <a href="/#/departments"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">ฝ่าย</span></a>
+      </li>
+       <li ng-class="{active: $uiRoute}" ui-route="/aquisitions" class="{{purchases.class}}" ng-if="authentication.user">
+        <a href="/#/aquisitions"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">aquisitions</span></a>
+      </li>
+      <li ng-class="{active: $uiRoute}" ui-route="/clients" class="{{purchases.class}}" ng-if="authentication.user">
+        <a href="/#/clients"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">RPT</span></a>
+      </li>
+      <li ng-class="{active: $uiRoute}" ui-route="/roles" class="{{purchases.class}}" ng-if="authentication.user">
+        <a href="/#/roles"><i class="fa fa-file-powerpoint-o"></i> <span class="nav-label">roles</span></a>
+      </li>
+
+      <!--<li>
+        <a><i class="fa fa-file-text"></i> <span class="nav-label">จัดจ้างทั่วไป</span></a>
+        <li ng-class="{active: $uiRoute}" ui-route="/constructions" class="{{constructions.class}}">
+          <a href="/#/constructions" style="margin-top: -10px;margin-left: 20px;"><i class="fa fa-file-text"></i> <span class="nav-label">ปรับปรุงทรัพย์</span></a>
+        </li>
+        <li ng-class="{active: $uiRoute}" ui-route="/safekeeps" class="{{safekeeps.class}}">
+          <a href="/#/safekeeps" style="margin-top: -10px;margin-left: 20px;"><i class="fa fa-file-text"></i> <span class="nav-label">ดูแลรักษาทรัพย์สินรอการขาย</span></a>
+        </li>
+      </li>
+      <li ng-class="{active: $uiRoute}" ui-route="/admin" class="{{admin.class}}" ng-if="authentication.user.roles[0] === 'admin'">
+        <a href="/#/admin"><i class="fa fa-building-o"></i> <span class="nav-label">admin</span></a>
+      </li>
+      <li ng-class="{active: $uiRoute}" ui-route="/acquisitions" class="{{acquisitions.class}}">
+        <a href="/#/acquisitions"><i class="fa fa-file-text"></i> <span class="nav-label">Acquisitions</span></a>
+      </li>-->
+      
+    </ul>
+    
+  </div>
+</nav>

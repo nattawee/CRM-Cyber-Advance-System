@@ -1,0 +1,192 @@
+<div class="ibox float-e-margins border-left border-right border-bottom">
+    <div class="ibox-title">
+        <h5>ตารางแสดงวงเงินงบประมาณที่ได้รับจัดสรรและราคากลาง(ราคาอ้างอิง)ในการจัดซื้อจัดจ้างที่มิใช่งานก่อสร้าง</h5>
+        <div ibox-tools></div>
+    </div>
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group " show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">1. ชื่อโครงการ</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form7.field1.field11" name="field11" class="form-control" placeholder="ชื่อโครงการ" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">1. ชื่อโครงการ</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field1.field11}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label text-right">/หน่วยงานเจ้าของโครงการ</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form7.field1.field12" name="field12" class="form-control" placeholder="หน่วยงานเจ้าของโครงการ" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label text-right">/หน่วยงานเจ้าของโครงการ</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field1.field12}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">2. วงเงินงบประมาณที่ได้รับจัดสรร</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form7.field2" name="field2" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">2. วงเงินงบประมาณที่ได้รับจัดสรร</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field2 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">3. วันที่กำหนดราคากลาง (ราคาอ้างอิง)</label>
+                    <div class="col-sm-9">
+                        <input type="date" ng-model="vm.general.form7.field3.field31" name="field31" class="form-control" placeholder="วันที่กำหนดราคากลาง" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">3. วันที่กำหนดราคากลาง (ราคาอ้างอิง)</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field3.field31 | date:'dd/MM/yyyy'}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">เป็นเงิน</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form7.field3.field32" name="field32" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">เป็นเงิน</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field3.field32 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">ราคา/หน่วย</label>
+                    <div class="col-sm-9">
+                        <input type="number" ng-model="vm.general.form7.field3.field33" name="field33" class="form-control" placeholder="บาท" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">ราคา/หน่วย</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field3.field33 | number:2}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-5 control-label">4. แหล่งที่มาของราคากลาง (ราคาอ้างอิง)</label>                    
+                    <div class="col-sm-7">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">4.1 </label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form7.field4.field41" name="field41" class="form-control" placeholder="" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">4.1 </label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field4.field41}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">4.2</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form7.field4.field42" name="field42" class="form-control" placeholder="" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">4.2</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field4.field42}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">4.3</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form7.field4.field43" name="field43" class="form-control" placeholder="" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">4.3</label>
+                   <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field4.field43}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                    <label class="col-sm-3 control-label">5. รายชื่อเจ้าหน้าที่ผู้กำหนดราคากลาง (ราคาอ้างอิง) ทุกคน</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="vm.general.form7.field5" name="field5" class="form-control" placeholder="ราคาอ้างอิง ทุกคน" >
+                    </div>                    
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                    <label class="col-sm-3 control-label">5. รายชื่อเจ้าหน้าที่ผู้กำหนดราคากลาง (ราคาอ้างอิง) ทุกคน</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static"> {{vm.general.form7.field5}} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+    </div>
+</div>

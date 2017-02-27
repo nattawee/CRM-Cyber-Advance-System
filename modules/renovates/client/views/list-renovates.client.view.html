@@ -1,0 +1,24 @@
+<section ng-init="vm.readGenerals()">
+  <div class="page-header">
+    <h2 class="text-center">
+      รายงานการปรับปรุงทรัพย์ (RENOVATE)
+    </h2>
+  </div>
+
+  <div class="table-responsive">
+    <div class="row">
+      <div class="col col-xs-10">
+        <input type="search" class="form-control " ng-model="searchText" placeholder="ค้นหา">
+      </div>
+      <div class="col col-md-2" ng-show="vm.authentication.user.roles[0] === 'dataentry' || vm.authentication.user.roles[0] === 'superuser'"><button class="btn btn-primary" ui-sref="renovates.create()">สร้างรายการใหม่</button></div>
+    </div>
+    <br>
+
+
+  </div>
+  <div ng-include="'/modules/properties/client/views/tab/tab.html'"></div>
+  <div class="alert alert-warning text-center" ng-if="vm.renovates.$resolved && !vm.renovates.length">
+    No renovates yet, why don't you <a ui-sref="renovates.create">create one</a>?
+  </div>
+  <div ng-include="'/modules/properties/client/views/button/button.exportexcel.html'"></div>
+</section>

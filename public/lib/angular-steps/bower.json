@@ -1,0 +1,19 @@
+{
+    "name": "angular-steps",
+    "version": "1.0.0",
+    "main": "dist/angular-steps.js",
+    "description": "Split your UI into (wizard-like) steps in AngularJS.",
+    "dependencies": {
+        "angular": "*"
+    },
+    "ignore": [
+        ".gitignore",
+        "bower.json",
+        "package.json",
+        "gulpfile.js",
+        "README.md",
+        "license.md",
+        "demo",
+        "test"
+    ]
+}

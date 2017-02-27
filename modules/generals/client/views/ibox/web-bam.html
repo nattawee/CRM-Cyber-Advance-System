@@ -1,0 +1,67 @@
+<div class="row" ng-if="(vm.general.status === 'approved' || vm.general.status === 'completed1' || vm.general.status === 'completed2') && vm.general.estexpense.amount >= 100000">
+      <div class="col col-md-10">
+        <div class="ibox float-e-margins border-left border-right border-bottom">
+          <div class="ibox-title">
+            <h5>ประกาศ Website BAM</h5>
+            <div ibox-tools></div>
+          </div>
+          <div class="ibox-content">
+            <div class="row">
+              <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                  <label class="col-sm-2 control-label">วันที่ส่งฝ่ายสื่อสารองค์กร</label>
+                  <div class="col-sm-4">
+                    <input type="date" ng-model="vm.general.announcement.requestdate" name="requestdate" class="form-control" placeholder="วันที่ส่งฝ่ายสื่อสารองค์กร"
+                      required>
+                  </div>
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                  <label class="col-sm-2 control-label">วันที่ส่งฝ่ายสื่อสารองค์กร</label>
+                  <div class="col-sm-4">
+                    <p class="form-control-static"> {{vm.general.announcement.requestdate | date:'dd/MM/yyyy'}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                  <label class="col-sm-2 control-label">วันที่ประกาศ Website BAM</label>
+                  <div class="col-sm-4">
+                    <input type="date" ng-model="vm.general.announcement.onlinedate" name="onlinedate" class="form-control" placeholder="วันที่ประกาศ Website BAM"
+                      required>
+                  </div>
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                  <label class="col-sm-2 control-label">วันที่ประกาศ Website BAM</label>
+                  <div class="col-sm-4">
+                    <p class="form-control-static"> {{vm.general.announcement.onlinedate | date:'dd/MM/yyyy'}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-md-2"></div>
+            </div>
+            <div class="row">
+              <div class="col col-md-10">
+                <div class="form-group" show-errors ng-if="vm.general.status === 'approved'">
+                  <label class="col-sm-2 control-label">เลขที่อ้างอิง</label>
+                  <div class="col-sm-10">
+                    <input type="text" ng-model="vm.general.announcement.reference" name="reference" class="form-control" placeholder="เลขที่อ้างอิง"
+                      required>
+                  </div>
+                </div>
+                <div class="form-group" ng-if="vm.general.status === 'completed1' || vm.general.status === 'completed2'">
+                  <label class="col-sm-2 control-label">เลขที่อ้างอิง</label>
+                  <div class="col-sm-10">
+                    <p class="form-control-static"> {{vm.general.announcement.reference}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-md-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-2"></div>
+    </div>

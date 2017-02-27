@@ -1,0 +1,32 @@
+<section style="min-height:1000px;">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>User Management</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-md-4" style="margin-top: 2em">
+          <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search" />
+          <!--ng-change="figureOutItemsToDisplay()"-->
+        </div>
+        <div class="col col-md-6" style="margin-top: 2em">
+          <button class="btn btn-primary" ui-sref="admin.user">สร้าง</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="list-group">
+    <a ng-repeat="user in pagedItems | filter:search " ui-sref="admin.user-edit({userId: user._id})" class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+      <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
+      <p class="list-group-item-text" ng-bind="user.email"></p>
+    </a>
+  </div>-->
+  <div ng-include="'/modules/users/client/views/admin/tab/tab.html'"></div>
+
+
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage"
+    ng-change="pageChanged()"></pagination>
+</section>

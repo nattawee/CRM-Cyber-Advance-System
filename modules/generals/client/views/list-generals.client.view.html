@@ -1,0 +1,28 @@
+<section ng-init="vm.readGenerals()">
+  <div class="page-header">
+    <h2 class="text-center">
+      ทะเบียนการจัดซื้อ/จัดจ้าง
+    </h2>
+  </div>
+
+  <div class="table-responsive">
+    <div class="row">
+      <div class="col col-xs-10">
+        <input type="search" class="form-control " ng-model="searchText" placeholder="ค้นหา">
+      </div>
+      <div class="col col-md-2" ng-show="vm.authentication.user.roles[0] === 'dataentry' || vm.authentication.user.roles[0] === 'superuser'">
+        <button class="btn btn-primary" ui-sref="generals.create()">สร้างรายการใหม่</button>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div ng-include="'/modules/generals/client/views/tab/tab.html'"></div>
+  <div class="alert alert-warning text-center" ng-if="vm.generals.$resolved && !vm.generals.length">
+    No Generals yet, why don't you <a ui-sref="generals.create">create one</a>?
+  </div>
+  <button ng-json-export-excel data="vm.dataList" report-fields="{ date:'วันที่', item: 'รายการจัดซื้อ/จัดจ้าง', brunch: 'สำนักงาน', owner:'ผู้รับผิดชอบ', docno:'บันทึกเลขที่', amount:'จำนวนเงิน',apprvdate:'วันที่',approver:'ผู้อนุมัติ',processtype:'วิธีซื้อ/จ้าง',methodtype:'ประเภทการซื้อ/จ้าง',requestdate:'วันที่ส่งฝ่ายสื่อสารองค์กร',onlinedate:'วันที่ประกาศ Website BAM',reference:'เลขที่อ้างอิง',pamount:'จำนวนเงิน',papprvdate:'วันที่',papprover:'ผู้อนุมัติ',supplier:'ผู้ชนะการเสนอราคา',refno:'เลขที่สัญญา/PO',naccdocdate:'วันที่',naccdocno:'เลขที่'}"
+    filename="'filename'" class="btn-sm btn-primary">Export Excel</button>
+
+
+</section>
